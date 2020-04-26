@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'compte.compte'|trans }}
+{% endblock %}
+{% block body %}
+
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>{{ 'compte.id'|trans }}</th>
+				<th>{{ 'contenu.date'|trans }}</th>
+				<th>{{ 'contenu.montant'|trans }}</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			{% for historique in historiques %}
+				<tr>
+					{# {% set Total = 0 %} #}
+					<td><a href="{{ path('SelectPanier', {'id': historique.id}) }}">{{ historique.id}}</a></td>
+					{# <td>
+						{% set Montant = historique.contenuPaniers.quantite * historique.contenuPaniers.produit.prix %}
+	                    {% set Total = Total + Montant %}
+						{{Total}}
+					</td> #}
+                    {# <td>{{historique.contenuPaniers}}</td> #}
+					<td>{{ historique.achat|date("m/d/Y")}}</td>
+				</tr>
+			{% endfor %}
+
+
+		</tbody>
+	</table>
+
+{% endblock %}

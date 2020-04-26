@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\ContenuPanier;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,9 +14,10 @@ class ContenuPanierType extends AbstractType
     {
         $builder
             ->add('quantite')
-            ->add('date')
-            ->add('produit')
-            ->add('Panier')
+            ->add('save', SubmitType::class)
+        
+           
+      
         ;
     }
 

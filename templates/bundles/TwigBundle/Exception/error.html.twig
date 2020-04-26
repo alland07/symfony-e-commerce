@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ 'error.page'|trans}}</h1>
+
+    <p>
+    <a href="{{ path('homepage') }}">{{ 'produit.accueil'|trans}}</a>.
+    </p>
+{% endblock %}

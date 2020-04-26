@@ -32,12 +32,13 @@ class Panier
     /**
      * @ORM\Column(type="boolean")
      */
-    private $etat;
+    private $etat = false;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\ContenuPanier", mappedBy="Panier")
+     * @ORM\OneToMany(targetEntity="App\Entity\ContenuPanier", mappedBy="panier")
      */
     private $contenuPaniers;
+
 
     public function __construct()
     {
@@ -97,7 +98,7 @@ class Panier
     {
         if (!$this->contenuPaniers->contains($contenuPanier)) {
             $this->contenuPaniers[] = $contenuPanier;
-            $contenuPanier->addPanier($this);
+            $contenuPanier->setPanier($this);
         }
 
         return $this;
@@ -107,9 +108,15 @@ class Panier
     {
         if ($this->contenuPaniers->contains($contenuPanier)) {
             $this->contenuPaniers->removeElement($contenuPanier);
-            $contenuPanier->removePanier($this);
+            // set the owning side to null (unless already changed)
+            if ($contenuPanier->getPanier() === $this) {
+                $contenuPanier->setPanier(null);
+            }
         }
 
         return $this;
     }
+
+
+
 }

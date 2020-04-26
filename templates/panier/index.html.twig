@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Panier index{% endblock %}
+{% block title %}{{ 'panier.index'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Panier index</h1>
+    <h1>{{ 'panier.index'|trans }}</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Achat</th>
-                <th>Etat</th>
-                <th>actions</th>
+                <th>{{ 'panier.id'|trans }}</th>
+                <th>{{ 'panier.achat'|trans }}</th>
+                <th>{{ 'panier.etat'|trans }}</th>
+                <th>{{ 'panier.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -20,18 +20,14 @@
                 <td>{{ panier.id }}</td>
                 <td>{{ panier.achat ? panier.achat|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ panier.etat ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href="{{ path('panier_show', {'id': panier.id}) }}">show</a>
-                    <a href="{{ path('panier_edit', {'id': panier.id}) }}">edit</a>
-                </td>
+             
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">{{ 'panier.manquant'|trans }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('panier_new') }}">Create new</a>
 {% endblock %}

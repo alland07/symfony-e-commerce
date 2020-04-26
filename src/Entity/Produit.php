@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProduitRepository")
@@ -20,21 +22,28 @@ class Produit
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotNull
      */
     private $nom;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotNull
      */
     private $description;
 
     /**
      * @ORM\Column(type="float")
+     * @Assert\NotNull
+     * @Assert\GreaterThan(
+     *     value = 0
+     * )
      */
     private $prix;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotNull
      */
     private $stock;
 
@@ -44,9 +53,11 @@ class Produit
     private $photo;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\ContenuPanier", mappedBy="produit")
+     * @ORM\OneToMany(targetEntity="App\Entity\ContenuPanier", mappedBy="produit")
      */
     private $contenuPaniers;
+
+  
 
     public function __construct()
     {
@@ -117,6 +128,11 @@ class Produit
 
         return $this;
     }
+    
+    public function __toString()
+    {
+        return $this->getNom();
+    }
 
     /**
      * @return Collection|ContenuPanier[]
@@ -130,7 +146,7 @@ class Produit
     {
         if (!$this->contenuPaniers->contains($contenuPanier)) {
             $this->contenuPaniers[] = $contenuPanier;
-            $contenuPanier->addProduit($this);
+            $contenuPanier->setProduit($this);
         }
 
         return $this;
@@ -140,9 +156,13 @@ class Produit
     {
         if ($this->contenuPaniers->contains($contenuPanier)) {
             $this->contenuPaniers->removeElement($contenuPanier);
-            $contenuPanier->removeProduit($this);
+            // set the owning side to null (unless already changed)
+            if ($contenuPanier->getProduit() === $this) {
+                $contenuPanier->setProduit(null);
+            }
         }
 
         return $this;
     }
+  
 }
