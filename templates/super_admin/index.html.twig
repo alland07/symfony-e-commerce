@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'superadmin.super'|trans}}
+{% endblock %}
+
+{% block body %}
+	<h1>{{ 'liste.nonachete'|trans}}</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>{{ 'superadmin.BasketId'|trans }}</th>
+				<th>{{ 'superadmin.BasketUser'|trans }}</th>
+				<th>{{ 'superadmin.BasketContent'|trans }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for nonAchete in NonAchete %}
+				<tr>
+					<td>{{nonAchete.id}}</td>
+					<td>{{nonAchete.utilisateur.email}}</td>
+				</tr>
+				<tr>
+				{% endfor %}
+			</tbody>
+		</tbody>
+	</table>
+
+	<h1>{{ 'liste.user'|trans}}</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>{{ 'liste.id'|trans}}</th>
+				<th>{{ 'liste.email'|trans}}</th>
+			</tr>
+		</thead>
+	</tbody>
+	{% for utilisateurs in userRepository %}
+		<td>{{utilisateurs.id}}</td>
+		<td>{{utilisateurs.email}}</td>
+	{% endfor %}
+</tbody></table>{% endblock %}

@@ -12,7 +12,6 @@
             <th>{{ 'contenu.qte'|trans }}</th>
             <th>{{ 'contenu.prix'|trans }}</th>
             <th>{{ 'contenu.date'|trans }}</th>
-            {# <th>actions</th> #}
             <th>{{ 'contenu.montant'|trans }}</th>
             <th>{{ 'contenu.del'|trans }}</th>
             <th>{{ 'contenu.panierId'|trans }}</th>
@@ -49,12 +48,5 @@
         {% endfor %}
     </tbody>
 </table>
-
-
     <h2>{{ 'contenu.pay'|trans }} {{Total}}</h2>
-
-{% if contenu_paniers is not empty %}
-<button> <a href="{{ path('achat', {'panier':panier.id}) }}">{{ 'contenu.acheter'|trans }}</a></button>
-{% endif %}
-
 {% endblock %}

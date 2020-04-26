@@ -1,0 +1,96 @@
+base:
+    historique: "historical"
+    accueil: "Home"
+    account: "My account"
+    connexion: "Connection"
+    deco: "logout"
+    basket: "basket"
+
+produit:
+    index: "Index"
+    id: "ID"
+    nom: "Name"
+    desc: "Description"
+    prix: "Price"
+    stock: "Stock"
+    photo: "Picture"
+    actions: "Action"
+    manquant: "There is no products available"
+    add: "Add a product"
+    voir: "See the product"
+    show: "Product"
+    accueil: "Home page"
+    edit: "Edit the product"
+    new: "New product"
+    delete: "Delete the product"
+
+contenu:
+    index: "Basket"
+    qte: "Quantity"
+    nom: "Name"
+    prix: "Price"
+    date: "Date"
+    del: "Delete"
+    panierId: "Basket's ID"
+    montant: "To pay"
+    pay: "Total"
+    acheter: "Buy"
+    manquant: "There is no product"
+
+compte:
+    compte: "My account"
+    id: "ID"
+    montant: "Total"
+    date: "Date"
+
+panier:
+    index: "historical"
+    id: "ID"
+    achat: "Achat"
+    etat: "State"
+    actions: "Actions"
+    manquant: "There is no basket"
+    accueil: "Home"
+
+log:
+    register: "Register"
+    in: "Connexion"
+    out: "Logout"
+    entant: "You are connected as"
+    please: "Please, login"
+    sign: "Inscription"
+    mdp: "Password"
+    email: "Email"
+
+flash:
+    photoValide: "Please, upload a valid picture"
+    produitsuccess: "The product has been added"
+    ajoutpanier: "Product added to the basket"
+    errorajout: "The product could not been added to the basket"
+    produitEdit: "Your product has been modified"
+    produitDelete: "The product has been deleted"
+    basketAdd: "The content has been added"
+    nobasket: There is no basket"
+    achat: "The basket has been bought"
+    register: "Nice job, you created your account!"
+
+superadmin:
+    super: "Welcome Super_Admin"
+    BasketId: "ID"
+    BasketUser: "Concerned User"
+    BasketContent: "Basket Content"
+
+error: 
+    titre: "This page doesn't exist"
+    titre2: "Acces denied"
+    titre3: "Internal Servor Error"
+    404: "404 Error"
+    403: "403 Error"
+    500: "500 Error"
+    page: "Error page"
+
+liste:
+    nonachete: "Unbought baskets"
+    user: "Users list"
+    id: "id"
+    email: "email"

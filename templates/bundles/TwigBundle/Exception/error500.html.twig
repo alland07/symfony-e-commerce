@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ 'error.titre3'|trans}}<br>
+    {{ 'error.500'|trans}}</h1>
+
+    <p>
+    <a href="{{ path('homepage') }}">{{ 'produit.accueil'|trans}}</a>.
+    </p>
+{% endblock %}

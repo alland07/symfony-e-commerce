@@ -1,0 +1,97 @@
+base:
+    historique: "historique"
+    accueil: "Accueil"
+    account: "mon compte"
+    connexion: "Connexion"
+    deco: "Déconnexion"
+    basket: "Panier"
+    
+
+produit:
+    index: "Index"
+    id: "ID"
+    nom: "Nom"
+    desc: "Description"
+    prix: "Prix"
+    stock: "Stock"
+    photo: "Photo"
+    actions: "Action"
+    manquant: "Il n'y a pas de produits de disponibles"
+    add: "Ajouter un produit"
+    voir: "Voir le produit"
+    show: "Produit"
+    accueil: "Accueil"
+    edit: "Modifier le produit"
+    new: "Nouveau produit"
+    delete: "Supprimer le produit"
+
+contenu:
+    index: "Panier"
+    qte: "Quantité"
+    nom: "Nom"
+    prix: "Prix"
+    date: "Date"
+    del: "Supprimer"
+    panierId: "ID du Panier"
+    montant: "Montant"
+    pay: "Total"
+    acheter: "Acheter"
+    manquant: "Il n'y a pas de produits"
+
+compte:
+    compte: "Mon compte"
+    id: "ID"
+    montant: "Montant"
+    date: "Date"
+
+panier:
+    index: "Historique"
+    id: "ID"
+    achat: "Achat"
+    etat: "Etat"
+    actions: "Actions"
+    manquant: "Il n'y a pas de panier"
+    accueil: "Accueil"
+
+log:
+    register: "Register"
+    in: "Se connecter"
+    out: "Se déconnecter"
+    entant: "Vous êtes connectés en tant que"
+    please: "Veuillez vous connecter"
+    sign: "Inscription"
+    mdp: "Mot de Passe"
+    email: "Email"
+
+flash:
+    photoValide: "Veuillez upload une photo valide"
+    produitsuccess: "Le produit a été ajouté"
+    ajoutpanier: "Le produit a été ajouté au panier"
+    errorajout: "Le produit n'a pas pu être ajouté au panier"
+    produitEdit: "Votre produit a été modifié"
+    produitDelete: "Votre produit a été supprimé"
+    basketAdd: "Le contenu a été ajouté"
+    nobasket: "Il n'y a pas de panier"
+    achat: "Le panier a été acheté"
+    register: "Bravo, vous avez créé votre compte"
+
+superadmin:
+    super: "Bienvenue Super_Admin"
+    BasketId: "ID"
+    BasketUser: "utilisateur Concerné"
+    BasketContent: "Contenu du panier"
+
+error: 
+    titre: "Cette page n'existe pas"
+    titre2: "Accès refusé"
+    titre3: "Erreur Serveur"
+    404: "Erreur 404"
+    403: "Accès refusé"
+    500: "Erreur 500"
+    page: "Page d'erreur"
+
+liste:
+    nonachete: "Liste des paniers non achetés"
+    user: "Liste des utilisateurs"
+    id: "id"
+    email: "email"
